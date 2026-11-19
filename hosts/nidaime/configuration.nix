@@ -13,6 +13,7 @@
     ../../modules/gui/lutris.nix
     ../../modules/gui/steam.nix
     ../../modules/helium.nix
+    ../../modules/luciole.nix
   ];
 
   virtualisation.vmVariantWithDisko = {
