@@ -172,6 +172,9 @@
     fontDir.enable = true;
     packages = with pkgs; [
       corefonts
+      vista-fonts
+      ibm-plex
+      nerd-fonts._0xproto
     ];
   };
 

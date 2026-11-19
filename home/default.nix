@@ -2,7 +2,6 @@
   config,
   pkgs,
   inputs,
-  lib,
   ...
 }:
 let
@@ -12,6 +11,11 @@ let
   kittyPath = "${config.home.homeDirectory}/flake/home/kitty";
   starshipPath = "${config.home.homeDirectory}/flake/home/starship.toml";
   noctaliaPath = "${config.home.homeDirectory}/flake/home/noctalia";
+
+  saturnianNight = pkgs.runCommand "saturnian-night" { } ''
+    mkdir -p $out/share/icons/Saturnian-Night
+    cp -r ${./cursors/Saturnian-Night}/* $out/share/icons/Saturnian-Night/
+  '';
 in
 {
   imports = [ inputs.nix-flatpak.homeManagerModules.nix-flatpak ];
@@ -25,12 +29,38 @@ in
     nixd
     protonup-qt
     kdePackages.ark
+    kdePackages.qt6ct
     starship
     fish
-    kdePackages.qtstyleplugin-kvantum
     obsidian
     cbonsai
+    papirus-folders
   ];
+
+  gtk = {
+    enable = true;
+    theme = {
+      name = "adw-gtk3";
+      package = pkgs.adw-gtk3;
+    };
+    iconTheme = {
+      name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;
+    };
+  };
+
+  qt = {
+    enable = true;
+  };
+
+  home.pointerCursor = {
+    enable = true;
+    name = "Saturnian-Night";
+    package = saturnianNight;
+    size = 24;
+
+    gtk.enable = true;
+  };
 
   services.polkit-gnome.enable = true;
 
@@ -102,7 +132,6 @@ in
 
   };
 
-
   programs.neovim = {
     enable = true;
     sideloadInitLua = true;
@@ -110,23 +139,6 @@ in
       vimPlugins.nvim-treesitter.withAllGrammars
     ];
     package = inputs.neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.default;
-  };
-
-  qt = {
-    enable = true;
-    platformTheme.name = lib.mkForce "qtct";
-    style.name = lib.mkForce "kvantum";
-    kvantum.enable = true;
-    qt6ctSettings = {
-      Appearance = {
-        icon_theme = "Papirus-Dark";
-        style = "kvantum";
-      };
-    };
-  };
-
-  gtk = {
-    enable = true;
   };
 
   xdg.configFile."umbriel".source = config.lib.file.mkOutOfStoreSymlink umbrielPath;

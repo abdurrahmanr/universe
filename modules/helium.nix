@@ -21,7 +21,10 @@
       "SyncDisabled" = false;
       "SpellcheckEnabled" = true;
       "SpellcheckLanguage" = [ "en-US" ];
-      "ExtensionInstallAllowlist" = [ "kfpeoanghcjibjecjfglenjnolokmfea" ];
+      "ExtensionInstallForcelist" = [
+        "dbepggeogbaibhgnhhndojpepiihcmeb"
+        "ghmbeldphafepmbegfdlkpapadhbakde"
+      ];
     };
   };
 }
