@@ -5,12 +5,12 @@
   ...
 }:
 let
-  nvimPath = "${config.home.homeDirectory}/flake/home/nvim";
-  fishPath = "${config.home.homeDirectory}/flake/home/fish";
-  umbrielPath = "${config.home.homeDirectory}/flake/home/umbriel";
-  kittyPath = "${config.home.homeDirectory}/flake/home/kitty";
-  starshipPath = "${config.home.homeDirectory}/flake/home/starship.toml";
-  noctaliaPath = "${config.home.homeDirectory}/flake/home/noctalia";
+  nvimPath = "${config.home.homeDirectory}/universe/home/nvim";
+  fishPath = "${config.home.homeDirectory}/universe/home/fish";
+  umbrielPath = "${config.home.homeDirectory}/universe/home/umbriel";
+  kittyPath = "${config.home.homeDirectory}/universe/home/kitty";
+  starshipPath = "${config.home.homeDirectory}/universe/home/starship.toml";
+  noctaliaPath = "${config.home.homeDirectory}/universe/home/noctalia";
 
   saturnianNight = pkgs.runCommand "saturnian-night" { } ''
     mkdir -p $out/share/icons/Saturnian-Night
