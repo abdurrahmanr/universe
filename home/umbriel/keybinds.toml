@@ -1,6 +1,6 @@
 [keybinds]
 "Mod+Return" = { action = "spawn kitty", repeat = false }
-"Mod+B" = { action = "spawn helium-browser --ozone-platform=wayland --password-store=kwallet", repeat = false }
+"Mod+B" = { action = "spawn helium --ozone-platform=wayland --password-store=kwallet", repeat = false }
 "Mod+T" = "window-toggle-floating"
 "Mod+P" = "window-toggle-pinned"
 "Mod+M" = "window-toggle-maximize-to-edges"
