@@ -1,7 +1,7 @@
 {
   disko.devices.disk.main = {
     type = "disk";
-    device = "/dev/disk/by-id/ata-Samsung_SSD_870_EVO_500GB_S6P6NJ0T109860K";
+    device = "/dev/disk/by-id/nvme-WD_PC_SN5000S_SDEQNSJ-512G-1002_2522C2405477";
     content = {
       type = "gpt";
       partitions = {
@@ -20,13 +20,34 @@
           content = {
             type = "btrfs";
             extraArgs = [ "-f" ];
-            mountpoint = "/";
             subvolumes = {
+              "/rootfs" = {
+                mountpoint = "/";
+                mountOptions = [
+                  "compress=zstd"
+                  "noatime"
+                ];
+              };
               "/home" = {
                 mountpoint = "/home";
+                mountOptions = [
+                  "compress=zstd"
+                  "noatime"
+                ];
               };
               "/nix" = {
                 mountpoint = "/nix";
+                mountOptions = [
+                  "compress=zstd"
+                  "noatime"
+                ];
+              };
+              "/log" = {
+                mountpoint = "/var/log";
+                mountOptions = [
+                  "compress=zstd"
+                  "noatime"
+                ];
               };
             };
           };
