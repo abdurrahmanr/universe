@@ -1,6 +1,6 @@
 [keybinds]
 "Mod+Return" = { action = "spawn kitty", repeat = false }
-"Mod+B" = { action = "spawn helium --ozone-platform=wayland --password-store=kwallet", repeat = false }
+"Mod+B" = { action = "spawn helium-browser --ozone-platform=wayland --password-store=kwallet", repeat = false }
 "Mod+T" = "window-toggle-floating"
 "Mod+P" = "window-toggle-pinned"
 "Mod+M" = "window-toggle-maximize-to-edges"
@@ -12,7 +12,7 @@
 "Mod+Tab" = "scratchpad-focus-next"
 "Mod+H" = "window-focus-left"
 "Mod+L" = "window-focus-right"
-"Mod+E" = { action = "spawn dolphin", repeat = false }
+"Mod+E" = { action = "spawn luciole", repeat = false }
 # "Mod+Q" = ""
 # Add `:DP-1` to any scratchpad action to target that output from anywhere.
 # "Mod+0" = "scratchpad-toggle:DP-1"
@@ -53,6 +53,9 @@
 "Mod+Ctrl+L" = "column-move-right"
 "Mod+Ctrl+J" = "column-move-to-workspace-next"
 "Mod+Ctrl+K" = "column-move-to-workspace-previous"
+
+"Mod+D" = "spawn echo 'wheel -5' | dotool"
+"Mod+U" = "spawn echo 'wheel 5' | dotool"
 
 "Mod+Shift+S" = { action = "spawn grim", repeat = false }
 "Mod+S" = { action = "submap region", repeat = false }

@@ -1,10 +1,10 @@
 [include]
 files = [
-    "appearance.toml",
-    "keybinds.toml",
-    "window_rules.toml",
-    "inputs.toml",
-    "outputs.toml",
+  "appearance.toml",
+  "keybinds.toml",
+  "window_rules.toml",
+  "inputs.toml",
+  "outputs.toml",
 ]
 
 [general]
@@ -16,21 +16,20 @@ focus_on_activate = true
 honor_restored_maximize = true
 
 [environment]
-QT_QPA_PLATFORMTHEME = "kde"
-QT_QPA_PLATFORM = "wayland"
-QT_STYLE_OVERRIDE = "kvantum"
+QT_QPA_PLATFORMTHEME = "qt6ct"
+QT_QPA_PLATFORM = "wayland:xcb"
 XDG_PICTURES_DIR = "$HOME/Pictures"
 
 [workspaces]
 back_and_forth = false
 
 [[workspace]]
-name =  "三"
+name = "三"
 layout.mode = "master"
 # Overview -------------------------------------------------------------------
 
 [overview]
-zoom = 0.5                     # 0.1-0.75
+zoom = 0.5 # 0.1-0.75
 # background_tint = "#10101430"
 # workspace_background = "#00000044" # set alpha to FF for an opaque background
 
@@ -38,7 +37,7 @@ zoom = 0.5                     # 0.1-0.75
 
 [hot_corners.top_left]
 enabled = true
-delay_ms = 500                # 0-10000, 0 activates immediately
+delay_ms = 500           # 0-10000, 0 activates immediately
 action = "overview-open"
 
 # [hot_corners.top_right]
@@ -59,13 +58,13 @@ action = "overview-open"
 # Layout ---------------------------------------------------------------------
 
 [layout]
-mode = "scrolling"             # "scrolling" or "dwindle"
-gap = 8                        # 0-500
+mode = "scrolling"                   # "scrolling" or "dwindle"
+gap = 8                              # 0-500
 extent_presets = [0.333, 0.5, 0.667] # shared by scrolling and dwindle
 
 [layout.scrolling]
-default_extent_fraction = 0.5   # 0.1-1.0
-center_underfull_strip = true  # center the strip whenever it is narrower than the viewport
+default_extent_fraction = 0.5 # 0.1-1.0
+center_underfull_strip = true # center the strip whenever it is narrower than the viewport
 
 # Workspace layout overrides (see docs/user/outputs.md#workspace-rules)
 
@@ -78,8 +77,11 @@ center_underfull_strip = true  # center the strip whenever it is narrower than t
 # Layer rules (see docs/user/rules.md#layer-rules) ---------------------------
 
 [[layer_rule]]
-match.namespace="^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$"
+match.namespace = "^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$"
 blur = true
 blur_ignore_alpha = 0.5
 blur_optimized = false
 
+
+[include.optional]
+files = ["noctalia.toml"]
