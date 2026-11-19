@@ -25,6 +25,8 @@ in
   programs.git.enable = true;
   home.stateVersion = "26.11";
 
+  services.kdeconnect.enable = true;
+
   home.packages = with pkgs; [
     nixd
     protonup-qt
