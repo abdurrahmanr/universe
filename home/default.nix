@@ -11,7 +11,7 @@ let
   umbrielPath = "${config.home.homeDirectory}/flake/home/umbriel";
   kittyPath = "${config.home.homeDirectory}/flake/home/kitty";
   starshipPath = "${config.home.homeDirectory}/flake/home/starship.toml";
-  noctaliaPath = "${config.home.homeDirectory}/flake/home/noctalia.toml";
+  noctaliaPath = "${config.home.homeDirectory}/flake/home/noctalia";
 in
 {
   imports = [ inputs.nix-flatpak.homeManagerModules.nix-flatpak ];
@@ -136,7 +136,7 @@ in
   xdg.configFile."nvim".source = config.lib.file.mkOutOfStoreSymlink nvimPath;
 
   xdg.configFile."starship.toml".source = config.lib.file.mkOutOfStoreSymlink starshipPath;
-  xdg.configFile."noctalia.toml".source = config.lib.file.mkOutOfStoreSymlink noctaliaPath;
+  xdg.configFile."noctalia".source = config.lib.file.mkOutOfStoreSymlink noctaliaPath;
 
   programs.fzf = {
     enable = true;
