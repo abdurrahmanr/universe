@@ -1,0 +1,61 @@
+[keybinds]
+"Mod+Return" = { action = "spawn kitty", repeat = false }
+"Mod+B" = { action = "spawn helium --ozone-platform=wayland --password-store=kwallet", repeat = false }
+"Mod+T" = "window-toggle-floating"
+"Mod+P" = "window-toggle-pinned"
+"Mod+M" = "window-toggle-maximize-to-edges"
+"Mod+Shift+M" = "window-toggle-fullscreen"
+"Mod+Q" = "window-close"
+"Mod+Shift+Space" = "window-move-to-scratchpad"
+"Mod+Space" = "scratchpad-toggle"
+"Mod+Ctrl+Space" = "window-restore-from-scratchpad"
+"Mod+Tab" = "scratchpad-focus-next"
+"Mod+H" = "window-focus-left"
+"Mod+L" = "window-focus-right"
+"Mod+E" = { action = "spawn dolphin", repeat = false }
+# "Mod+Q" = ""
+# Add `:DP-1` to any scratchpad action to target that output from anywhere.
+# "Mod+0" = "scratchpad-toggle:DP-1"
+# "Mod+Shift+0" = "window-move-to-scratchpad:DP-1"
+# "Mod+Ctrl+0" = "window-restore-from-scratchpad:DP-1"
+# "Mod+Alt+0" = "scratchpad-focus-next:DP-1"
+"Mod" = { action = "spawn noctalia msg panel-toggle launcher", repeat = false }
+"Mod+O" = "overview-toggle"
+# "Mod+Space" is taken above; pick a free chord for layout switching.
+# "Mod+Shift+K" = "keyboard-layout-next"
+
+# Output, workspace, and window movement actions.
+# "Mod+Comma" = "workspace-previous"
+# "Mod+Period" = "workspace-next"
+# "Mod+Ctrl+H" = "output-focus-left"
+"Mod+Minus" = "window-modify-width-right -0.1"
+"Mod+Equal" = "window-modify-width-right 0.1"
+# "Mod+C" = "window-center"
+# "Mod+Shift+T" = "workspace-set-layout:toggle"
+
+"Mod+1" = "workspace-switch 一"
+"Mod+2" = "workspace-switch 二"
+"Mod+3" = "workspace-switch 三"
+"Mod+Comma" = "spawn noctalia msg settings-toggle"
+
+"Mod+X" = "spawn noctalia msg panel-toggle session"
+
+"XF86AudioRaiseVolume" = { action = "spawn noctalia msg volume-up", allow_when_locked = true }
+"XF86AudioLowerVolume" = { action = "spawn noctalia msg volume-down", allow_when_locked = true }
+"XF86AudioMute" = { action = "spawn noctalia msg volume-mute", allow_when_locked = true, repeat = false }
+"XF86AudioPlay" = { action = "spawn noctalia msg media toggle", allow_when_locked = true, repeat = false }
+"XF86AudioNext" = { action = "spawn noctalia msg media next", allow_when_locked = true }
+"XF86AudioPrev" = { action = "spawn noctalia msg media previous", allow_when_locked = true }
+"XF86MonBrightnessUp" = { action = "spawn noctalia msg brightness-up", allow_when_locked = true }
+"XF86MonBrightnessDown" = { action = "spawn noctalia msg brightness-down", allow_when_locked = true }
+
+"Mod+Ctrl+H" = "column-move-left"
+"Mod+Ctrl+L" = "column-move-right"
+"Mod+Ctrl+J" = "column-move-to-workspace-next"
+"Mod+Ctrl+K" = "column-move-to-workspace-previous"
+
+"Mod+Shift+S" = { action = "spawn grim", repeat = false }
+"Mod+S" = { action = "submap region", repeat = false }
+"submap[region],C" = { action = "spawn grim -g \"$(slurp)\" - | wl-copy", submap = "reset" }
+"submap[region],S" = { action = "spawn grim -g \"$(slurp)\"", submap = "reset" }
+"submap[region],Escape" = "submap reset"

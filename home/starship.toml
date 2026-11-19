@@ -1,0 +1,80 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[░▒▓](#C5C9C7)\
+[ 󰣇 ](bg:#C5C9C7 fg:#090c0c)\
+[](bg:#16161D fg:#C5C9C7)\
+$directory\
+[](fg:#16161D bg:#2A2A37)\
+$git_branch\
+$git_status\
+[](fg:#2A2A37 bg:#1F1F28)\
+$nodejs\
+$rust\
+$golang\
+$php\
+$python\
+$bun\
+[](fg:#1F1F28)\
+$cmd_duration\
+\n$character"""
+
+[character]
+error_symbol = "[404 - skill issue](bold red)"
+
+[directory]
+style = "fg:#658594 bg:#16161D"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[git_branch]
+symbol = ""
+style = "bg:#2A2A37"
+format = '[[ $symbol $branch ](fg:#c4746e bg:#2A2A37)]($style)'
+
+[git_status]
+style = "bg:#2A2A37"
+format = '[[($all_status$ahead_behind )](fg:#c4746e  bg:#2A2A37)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:#1F1F28"
+format = '[[ $symbol ($version) ](fg:#c4b28a bg:#1F1F28)]($style)'
+
+[bun]
+symbol = ""
+style = "bg:#1F1F28"
+format = '[[ $symbol  ($version) ](fg:#c4b28a bg:#1F1F28)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:#1F1F28"
+format = '[[ $symbol ($version) ](fg:#c4b28a bg:#1F1F28)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:#1F1F28"
+format = '[[ $symbol ($version) ](fg:#c4b28a bg:#1F1F28)]($style)'
+
+[php]
+symbol = ""
+style = "bg:#1F1F28"
+format = '[[ $symbol ($version) ](fg:#c4b28a bg:#1F1F28)]($style)'
+
+[python]
+symbol = "🐍 "
+python_binary = [["uv", "run", "--no-python-downloads", "python"]]
+format = 'via [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+
+[cmd_duration]
+format = " took $duration"
+disabled = false
+show_notifications = false
+min_time_to_notify = 45000
