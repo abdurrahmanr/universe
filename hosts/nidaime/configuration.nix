@@ -1,6 +1,5 @@
 {
   pkgs,
-  lib,
   ...
 }:
 
@@ -13,7 +12,6 @@
     ../../modules/noctalia-greeter.nix
     ../../modules/gui/lutris.nix
     ../../modules/gui/steam.nix
-    ../../modules/themes/stylix.nix
     ../../modules/helium.nix
   ];
 

@@ -5,18 +5,8 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
 
-    stylix = {
-      url = "github:nix-community/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     disko = {
       url = "github:nix-community/disko";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    niri-flake = {
-      url = "github:epireyn/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -40,6 +30,8 @@
 
     umbriel.url = "github:noctalia-dev/umbriel/cachix";
 
+    luciole.url = "github:noctalia-dev/luciole";
+
     helium-flake = {
       url = "github:oxcl/nix-flake-helium-browser";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -54,7 +46,6 @@
       home-manager,
       neovim-nightly-overlay,
       nix-flatpak,
-      stylix,
       disko,
       ...
     }@inputs:

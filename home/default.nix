@@ -6,8 +6,8 @@
   ...
 }:
 let
-  nvimPath = "${config.home.homeDirectory}/nixos/home/nvim";
-  fishPath = "${config.home.homeDirectory}/nixos/home/fish";
+  nvimPath = "${config.home.homeDirectory}/flake/home/nvim";
+  fishPath = "${config.home.homeDirectory}/flake/home/fish";
 in
 {
   imports = [ inputs.nix-flatpak.homeManagerModules.nix-flatpak ];
@@ -24,9 +24,11 @@ in
     starship
     fish
     kdePackages.qtstyleplugin-kvantum
-    libreoffice-qt6
     obsidian
+    cbonsai
   ];
+
+  services.polkit-gnome.enable = true;
 
   xdg.mimeApps = {
     enable = true;
@@ -36,10 +38,10 @@ in
   };
 
   services.flatpak.packages = [
-    # {
-    #   appId = "org.libreoffice.LibreOffice";
-    #   origin = "flathub";
-    # }
+    {
+      appId = "org.libreoffice.LibreOffice";
+      origin = "flathub";
+    }
   ];
 
   programs.git.settings.user = {
@@ -51,7 +53,6 @@ in
     enable = true;
   };
 
-  stylix.targets.zathura.enable = false;
   programs.zathura = {
     enable = true;
     options = {
@@ -97,7 +98,6 @@ in
 
   };
 
-  stylix.targets.neovim.enable = false;
 
   programs.neovim = {
     enable = true;
