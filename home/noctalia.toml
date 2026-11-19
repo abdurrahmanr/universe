@@ -1,0 +1,408 @@
+[audio]
+enable_sounds = true
+sound_volume = 0.99999997764825821
+
+[bar]
+order = [ "Main" ]
+
+    [bar.Main]
+    background_opacity = 0.84999998100101948
+    capsule = true
+    capsule_fill = "on_primary"
+    capsule_foreground = "primary"
+    center = [ "workspaces" ]
+    end = [
+        "widget",
+        "tray",
+        "notifications",
+        "clipboard",
+        "bluetooth",
+        "volume",
+        "brightness",
+        "network",
+        "battery",
+        "group:g1",
+        "weather",
+        "session",
+        "mirror"
+    ]
+    font_family = "IBM Plex Sans"
+    margin_ends = 0
+    radius = 0
+    radius_top_left = 0
+    start = [ "launcher", "cat", "group:g2", "bar_2", "bar_3", "audio_visualizer" ]
+
+        [[bar.Main.capsule_group]]
+        accordion = false
+        accordion_direction = "end"
+        enabled = true
+        fill = "on_primary"
+        foreground = "primary"
+        id = "g1"
+        members = [ "date", "clock" ]
+        opacity = 1.0
+        padding = 6.0
+
+        [[bar.Main.capsule_group]]
+        accordion = false
+        accordion_direction = "end"
+        enabled = true
+        fill = "on_primary"
+        foreground = "primary"
+        id = "g2"
+        members = [ "cpu", "ram", "sysmon" ]
+        opacity = 1.0
+        padding = 6.0
+
+[calendar]
+
+[control_center.calendar]
+show_events_card = false
+
+[desktop_widgets]
+schema_version = 2
+widget_order = [ "desktop-widget-0000000000000002", "desktop-widget-0000000000000001" ]
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget.desktop-widget-0000000000000001]
+    box_height = 176.0
+    box_width = 288.0
+    cx = 1010.5
+    cy = 486.0
+    output = "eDP-1"
+    placement_height = 923.0
+    placement_width = 1476.0
+    rotation = 0.0
+    type = "nirusaki/clearclock:desktop"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000001.settings]
+        adaptiveColors = true
+        background = false
+        clockFontColor = "primary"
+        clockFontFamily = "ccdefault"
+        clockShowSeconds = false
+        clockUse24hFormat = true
+        dateFontColor = "secondary"
+        dateGap = -19
+        dayFontColor = "secondary"
+        dayFontFamily = "ccdefault"
+        frostedFont = false
+        frostedGlass = false
+        renderInstance = "desktop-widget-0000000000000001"
+
+    [desktop_widgets.widget.desktop-widget-0000000000000002]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 738.5
+    cy = 892.727294921875
+    output = "eDP-1"
+    placement_height = 923.0
+    placement_width = 1476.0
+    rotation = 0.0
+    type = "noctalia/lyrics:desktop"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000002.settings]
+        active_color = "primary"
+        background = false
+        background_color = "surface"
+        background_opacity = 0.80000000000000004
+        background_padding = 10
+        background_radius = 12
+        color = "primary_container"
+        font_size = 20
+        hide_when_idle = true
+        hide_when_no_media = true
+        line_count = 1
+        shadow = true
+        width = 640
+
+[dock]
+icon_size = 32
+pinned = [ "helium" ]
+position = "left"
+reserve_space = false
+smart_auto_hide = true
+
+[idle]
+behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = true
+    timeout = 60.0
+
+    [idle.behavior.lock-and-suspend]
+    action = "lock_and_suspend"
+    enabled = true
+    timeout = 300.0
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = false
+    timeout = 660.0
+
+[location]
+address = "Makassar, Indonesia"
+
+[lockscreen]
+transition = [ "zoom" ]
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@WL-1", "lockscreen-login-box@winit", "lockscreen-login-box@eDP-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@WL-1"]
+    box_height = 196.0
+    box_width = 720.0
+    cx = 356.99996948242188
+    cy = 676.72265625
+    output = "WL-1"
+    placement_height = 856.0
+    placement_width = 714.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@WL-1".settings]
+        background_color = "surface_container"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_password_reveal = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 767.47991943359375
+    cy = 777.99951171875
+    output = "eDP-1"
+    placement_height = 923.0
+    placement_width = 1476.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_container"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_password_reveal = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@winit"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 464.0
+    cy = 844.0
+    output = "winit"
+    placement_height = 0.0
+    placement_width = 0.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@winit".settings]
+        background_color = "surface_container"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_password_reveal = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+[nightlight]
+enabled = true
+temperature_night = 4500
+
+[osd.kinds]
+media = false
+media_volume = false
+
+[plugin_settings."alexander/game-launcher"]
+heroic_enabled = false
+steam_enabled = false
+
+[plugin_settings."h465855hgg/lyrics"]
+display_mode = "lyrics"
+lyrics_source = "mpris"
+translation_language = "en"
+
+[plugin_settings."noctalia/mpvpaper"]
+picker_placement = "floating"
+picker_position = "center"
+video_directory = "/home/abdurrahmanr/Videos/wallpapers"
+
+[plugin_settings."noctalia/wallpaper_depth"]
+threshold = 12
+
+[plugins]
+enabled = [
+    "noctalia/bongocat",
+    "alexander/screen-toolkit",
+    "elijaharch/wl-screen-mirror",
+    "alexander/game-launcher",
+    "avivbintangaringga/nextboot-selector",
+    "noctalia/timer",
+    "noctalia/umbriel-companion",
+    "ismay/media-player-icon",
+    "icefish/phone-connect"
+]
+
+[shell]
+font_family = "IBM Plex Sans"
+niri_overview_type_to_launch_enabled = true
+polkit_agent = true
+screen_time_enabled = true
+
+    [shell.launcher]
+    categories = false
+    compact = true
+    layout = "simple"
+
+        [shell.launcher.providers.emoji]
+        global = true
+
+[theme]
+builtin = "Kanagawa"
+community_palette = "Kanagawa Dragon"
+source = "community"
+wallpaper_scheme = "m3-monochrome"
+
+    [theme.templates]
+    builtin_ids = [ "cava", "gtk3", "gtk4", "kcolorscheme", "luciole", "qt", "umbriel" ]
+    community_ids = [ "telegram", "libreoffice", "obsidian", "obs", "zathura" ]
+
+        [theme.templates.user.noctalia-papirus]
+        input_path = "~/.config/noctalia/templates/Noctalia-Papirus.sh"
+        output_path = "~/.cache/noctalia/Noctalia-Papirus-apply.sh"
+        post_hook = "bash ~/.cache/noctalia/Noctalia-Papirus-apply.sh"
+
+[wallpaper]
+directory = "/home/abdurrahmanr/Downloads"
+
+    [wallpaper.default]
+    path = "/home/abdurrahmanr/Downloads/mounish-raja-RoZWfrzBVnE-unsplash.jpg"
+
+    [wallpaper.last]
+    path = "/home/abdurrahmanr/Downloads/mounish-raja-RoZWfrzBVnE-unsplash.jpg"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/home/abdurrahmanr/Downloads/mounish-raja-RoZWfrzBVnE-unsplash.jpg"
+
+[widget.audio_visualizer]
+interactive = false
+mirrored = false
+
+[widget.bar_2]
+capsule_foreground = "primary"
+color = "primary"
+icon_color = "primary"
+show_idle_on_horizontal = false
+type = "noctalia/timer:bar"
+
+[widget.bar_3]
+type = "icefish/phone-connect:bar"
+
+[widget.brightness]
+show_label = false
+
+[widget.cat]
+input_devices = [ "/dev/input/event19", "/dev/input/event14", "/dev/input/event15" ]
+type = "noctalia/bongocat:cat"
+
+[widget.clock]
+font_weight = 700
+
+[widget.cpu]
+visualization = "none"
+
+[widget.date]
+font_weight = 700
+
+[widget.launcher]
+capsule = true
+custom_image = "/home/abdurrahmanr/Downloads/Union.svg"
+custom_image_colorize = true
+glyph = ""
+
+[widget.media]
+artist_first = true
+enabled = false
+hide_when_idle = true
+hide_when_no_media = true
+peek = true
+rotate_album_art = true
+show_progress = true
+title_scroll = "on_hover"
+
+[widget.mirror]
+enabled = false
+type = "elijaharch/wl-screen-mirror:mirror"
+
+[widget.network]
+show_label = false
+
+[widget.ram]
+visualization = "none"
+
+[widget.session]
+enabled = false
+
+[widget.sysmon]
+stat = "gpu_usage"
+visualization = "none"
+
+[widget.tray]
+drawer = true
+hidden = [ "fdm" ]
+pinned = [ "fMAYeamyus", "discord", "Warp-taskbar" ]
+
+[widget.volume]
+show_label = false
+
+[widget.weather]
+show_condition = false
+
+[widget.widget]
+type = "alexander/screen-toolkit:widget"
+
+[widget.workspaces]
+active_pill_size = 2.0
+capsule_radius = "auto"
+label_source = "name"
+style = "minimal"
