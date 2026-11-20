@@ -78,6 +78,22 @@ in
     };
   };
 
+
+  programs.rmpc = {
+    enable = true;
+    config = ''
+        (
+      lyrics_dir: Some("~/music/.lyrics"),
+      )
+    '';
+
+  };
+  services.mpd = {
+    enable = true;
+    musicDirectory = "~/music";
+
+  };
+
   services.flatpak.packages = [
     {
       appId = "org.libreoffice.LibreOffice";
