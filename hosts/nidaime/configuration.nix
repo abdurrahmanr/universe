@@ -192,6 +192,11 @@
 
   system.stateVersion = "26.11";
 
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
+
   nix.settings = {
     substituters = [
       "https://cache.nixos.org"
