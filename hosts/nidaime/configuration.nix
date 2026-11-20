@@ -7,6 +7,7 @@
   imports = [
     ./hardware.nix
     ./disk.nix
+    ./storage.nix
     ../../modules/umbriel.nix
     ../../modules/noctalia.nix
     ../../modules/noctalia-greeter.nix
