@@ -83,6 +83,10 @@ in
       appId = "org.libreoffice.LibreOffice";
       origin = "flathub";
     }
+    {
+      appId = "org.freedownloadmanager.Manager";
+      origin = "flathub";
+    }
   ];
 
   programs.git.settings.user = {

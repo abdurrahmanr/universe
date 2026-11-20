@@ -24,6 +24,7 @@
       "ExtensionInstallForcelist" = [
         "dbepggeogbaibhgnhhndojpepiihcmeb"
         "ghmbeldphafepmbegfdlkpapadhbakde"
+        "ahmpjcflkgiildlgicmcieglgoilbfdp"
       ];
     };
   };
