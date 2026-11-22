@@ -39,6 +39,18 @@ in
     papirus-folders
   ];
 
+  programs.ssh = {
+    enable = true;
+    enableDefaultConfig = false;
+
+    settings = {
+      "github.com" = {
+        identityFile = "/home/abdurrahmanr/.ssh/github";
+        identitiesOnly = true;
+      };
+    };
+  };
+
   gtk = {
     enable = true;
     theme = {

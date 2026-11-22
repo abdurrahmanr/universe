@@ -1,5 +1,6 @@
 {
   pkgs,
+  inputs,
   ...
 }:
 
@@ -112,6 +113,20 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  age.identityPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+
+  age.secrets.github-ssh = {
+    file = ../../secrets/github-ssh.age;
+    path = "/home/abdurrahmanr/.ssh/github";
+    owner = "abdurrahmanr";
+    mode = "0400";
+  };
+
+  services.openssh = {
+    enable = true;
+    openFirewall = false;
+  };
+
   environment.systemPackages = with pkgs; [
     vim
     kitty
@@ -133,6 +148,7 @@
     wl-clipboard
     slurp
     proton-pass
+    inputs.agenix.packages.${pkgs.system}.default
 
     (wrapOBS {
       plugins = with obs-studio-plugins; [
