@@ -12,7 +12,7 @@
     ../../modules/umbriel.nix
     ../../modules/noctalia.nix
     ../../modules/noctalia-greeter.nix
-    ../../modules/gui/lutris.nix
+    # ../../modules/gui/lutris.nix
     ../../modules/gui/steam.nix
     ../../modules/helium.nix
     ../../modules/luciole.nix

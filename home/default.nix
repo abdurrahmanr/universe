@@ -148,6 +148,18 @@ in
       appId = "org.freedownloadmanager.Manager";
       origin = "flathub";
     }
+    {
+      appId = "com.github.tchx84.Flatseal";
+      origin = "flathub";
+    }
+    {
+      appId = "net.lutris.Lutris";
+      origin = "flathub";
+    }
+    {
+      appId = "com.vysp3r.ProtonPlus";
+      origin = "flathub";
+    }
   ];
 
   programs.git.settings.user = {
