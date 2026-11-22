@@ -148,7 +148,7 @@
     wl-clipboard
     slurp
     proton-pass
-    inputs.agenix.packages.${pkgs.system}.default
+    inputs.agenix.packages.${pkgs.stdenv.hostPlatform.system}.default
 
     (wrapOBS {
       plugins = with obs-studio-plugins; [
