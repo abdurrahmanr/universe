@@ -22,7 +22,12 @@ in
 
   home.username = "abdurrahmanr";
   home.homeDirectory = "/home/abdurrahmanr";
-  programs.git.enable = true;
+  programs.git = {
+    enable = true;
+    settings = {
+      core.editor = "nvim";
+    };
+  };
   home.stateVersion = "26.11";
 
   services.kdeconnect.enable = true;
@@ -90,6 +95,12 @@ in
     };
   };
 
+  xdg.terminal-exec = {
+    enable = true;
+    settings = {
+      default = [ "kitty.desktop" ];
+    };
+  };
 
   programs.rmpc = {
     enable = true;
@@ -171,9 +182,15 @@ in
 
   };
 
+  home.sessionVariables = {
+    EDITOR = "nvim";
+    VISUAL = "nvim";
+  };
+
   programs.neovim = {
     enable = true;
     sideloadInitLua = true;
+    defaultEditor = true;
     plugins = with pkgs; [
       vimPlugins.nvim-treesitter.withAllGrammars
     ];
