@@ -19,6 +19,13 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
 
+    nix-ttf-ms-win11-auto.url = "github:kugland/nix-ttf-ms-win11-auto";
+
+    NixVirt = {
+      url = "https://flakehub.com/f/AshleyYakeley/NixVirt/*.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -63,6 +70,8 @@
       nix-flatpak,
       disko,
       agenix,
+      NixVirt,
+      nix-ttf-ms-win11-auto,
       ...
     }@inputs:
     {
