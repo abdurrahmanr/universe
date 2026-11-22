@@ -43,13 +43,14 @@
     };
 
     umbriel.url = "github:noctalia-dev/umbriel/cachix";
-
-    luciole.url = "github:noctalia-dev/luciole";
+    luciole.url = "github:noctalia-dev/luciole/cachix";
 
     helium-flake = {
       url = "github:oxcl/nix-flake-helium-browser";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    agenix.url = "github:ryantm/agenix";
 
   };
 
@@ -61,6 +62,7 @@
       neovim-nightly-overlay,
       nix-flatpak,
       disko,
+      agenix,
       ...
     }@inputs:
     {
@@ -73,6 +75,7 @@
 
         modules = [
           ./hosts/nidaime/configuration.nix
+          agenix.nixosModules.default
           disko.nixosModules.disko
           home-manager.nixosModules.home-manager
           {
