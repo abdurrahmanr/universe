@@ -187,12 +187,15 @@
 
   fonts = {
     fontDir.enable = true;
-    packages = with pkgs; [
-      corefonts
-      vista-fonts
-      ibm-plex
-      nerd-fonts._0xproto
-    ];
+    packages =
+      (with pkgs; [
+        ibm-plex
+        nerd-fonts._0xproto
+      ])
+      ++ (with inputs.nix-ttf-ms-win11-auto.packages.${pkgs.stdenv.hostPlatform.system}; [
+        ttf-ms-win11-auto
+        ttf-ms-win11-fod-auto-paneuropean
+      ]);
   };
 
   services.flatpak.enable = true;
