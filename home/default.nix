@@ -28,6 +28,28 @@ in
       core.editor = "nvim";
     };
   };
+
+  programs.delta = {
+    enable = true;
+    enableGitIntegration = true;
+    options = {
+      navigate = true;
+      line-numbers = true;
+    };
+  };
+
+  programs.lazygit = {
+    enable = true;
+    settings = {
+      git = {
+        diffRenderers = [
+          {
+            command = "delta --{{colorScheme}} --paging=never";
+          }
+        ];
+      };
+    };
+  };
   home.stateVersion = "26.11";
 
   services.kdeconnect.enable = true;
